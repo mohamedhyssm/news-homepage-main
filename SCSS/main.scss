@@ -1,0 +1,312 @@
+// Import global rules
+@import "global-rules/global-rules";
+
+// Import mixin
+@import "helpers/mixins";
+
+// Import Variables
+@import "helpers/variables";
+
+body {
+  .overlay {
+    @include overlay(#000000, 0.7);
+    z-index: 99;
+    display: none;
+
+    &.block {
+      display: block;
+    }
+  }
+}
+
+// Start header 
+header {
+  // padding top and bottom
+  @include padding-top-and-bottom(20px, 20px);
+
+  .container {
+    @include flex-space-between();
+
+    h1 {
+      font-weight: 800;
+    }
+
+    nav {
+      position: relative;
+      z-index: 999;
+
+      .burgerIcon {
+        width: 35px;
+        height: 20px;
+        position: relative;
+        z-index: 999;
+        display: none;
+        cursor: pointer;
+
+        span {
+          width: 100%;
+          height: 2px;
+          background-color: $greyColor;
+          position: absolute;
+          transition: 0.1s;
+
+          &:first-child {
+            &.FirstRotate {
+              transform: rotate(45deg);
+            }
+          }
+
+          &:nth-child(2),
+          &.go-center {
+            top: calc(50% - 1px);
+
+            &.noOpacity {
+              opacity: 0;
+            }
+          }
+
+          &:last-child {
+            bottom: 0;
+
+            &.lastRotate {
+              transform: rotate(-45deg);
+            }
+          }
+
+        }
+
+        @media (max-width: 770px) {
+          display: block;
+        }
+      }
+
+      ul {
+        display: flex;
+        gap: 30px;
+
+        li {
+          a {
+            text-decoration: none;
+            color: $greyColor;
+            transition: $mainTransition;
+            cursor: pointer;
+
+            &:hover {
+              color: hsl(5, 85%, 63%);
+            }
+          }
+        }
+
+        @media (max-width: 770px) {
+          // flex
+          flex-direction: column;
+          // position
+          position: absolute;
+          top: -30px;
+          right: -15px;
+          // dimentions
+          width: 300px;
+          height: 100vh;
+          // color padding
+          background: white;
+          padding: 100px 20px 0;
+          display: none;
+
+          &.block {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+// End header
+
+// Start Landing
+.landing {
+  @include padding-top-and-bottom(20px, 20px);
+
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+
+    @media (max-width: 770px) {
+      grid-template-columns: 1fr;
+    }
+
+    .content {
+      img {
+        width: 100%;
+      }
+
+      .text {
+        margin-top: 30px;
+        @include flex-space-between();
+
+        @media (max-width: 770px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        h2 {
+          width: 30%;
+          margin-top: -5px;
+          font-size: 40px;
+          font-weight: 800;
+
+          @media (max-width: 770px) {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+
+        .contentText {
+          width: 58%;
+
+          @media (max-width: 770px) {
+            width: 100%;
+          }
+
+          p {
+            line-height: 1.6;
+            color: $greyColor;
+            text-align: start;
+          }
+
+          .button {
+
+            button {
+              // border
+              margin-top: 20px;
+              border: none;
+              padding: 12px 25px;
+              // colors
+              color: $whiteColor;
+              background-color: hsl(5, 85%, 63%);
+              // font
+              font-size: 13px;
+              letter-spacing: 2px;
+              // curser and transition
+              cursor: pointer;
+              transition: $mainTransition;
+
+              &:hover {
+                background-color: $darkColor;
+              }
+            }
+
+            @media (max-width: 770px) {
+              text-align: end;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.landing .container {
+  .boxes {
+    background-color: $darkColor;
+    padding: 20px;
+
+    h2 {
+      color: hsl(35, 77%, 62%);
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .box {
+      @include padding-top-and-bottom(20px, 20px);
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $greyColor;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        color: $whiteColor;
+        margin-bottom: 15px;
+      }
+
+      p {
+        color: $greyColor;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+// End Landing
+
+// Start Gaming
+.gaming {
+  @include padding-top-and-bottom(30px, 30px);
+
+  .container {
+    @include grid-media(300px, 1fr, 10px);
+
+    .box {
+      display: flex;
+      gap: 10px;
+
+      img {
+        height: 160px;
+      }
+
+      .text {
+
+        span {
+          display: block;
+          color: hsl(233, 8%, 79%);
+          font-size: 30px;
+          margin-bottom: 10px;
+        }
+
+        h3 {
+          color: $darkColor;
+          margin-bottom: 10px;
+          cursor: pointer;
+          transition: $mainTransition;
+
+          &:hover {
+            color: hsl(5, 85%, 63%);
+          }
+        }
+
+        p {
+          color: $greyColor;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+// End Gaming
+
+// Start footer
+footer {
+  @include padding-top-and-bottom(20px, 20px);
+  background-color: $darkColor;
+  color: white;
+
+  .attribution {
+    text-align: center;
+
+    a,
+    span {
+      color: hsl(228, 45%, 44%);
+      text-decoration: none;
+
+    }
+
+    @media (max-width: 770px) {
+      font-size: 12px;
+    }
+  }
+}
+
+// End footer

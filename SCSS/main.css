@@ -1,0 +1,330 @@
+/* Start glable-rules */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+p {
+  font-size: 15px;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End glable-rules */
+body .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  display: none;
+}
+body .overlay.block {
+  display: block;
+}
+
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .container h1 {
+  font-weight: 800;
+}
+header .container nav {
+  position: relative;
+  z-index: 999;
+}
+header .container nav .burgerIcon {
+  width: 35px;
+  height: 20px;
+  position: relative;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+}
+header .container nav .burgerIcon span {
+  width: 100%;
+  height: 2px;
+  background-color: #5d5f79;
+  position: absolute;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+header .container nav .burgerIcon span:first-child.FirstRotate {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+header .container nav .burgerIcon span:nth-child(2), header .container nav .burgerIcon span.go-center {
+  top: calc(50% - 1px);
+}
+header .container nav .burgerIcon span:nth-child(2).noOpacity, header .container nav .burgerIcon span.go-center.noOpacity {
+  opacity: 0;
+}
+header .container nav .burgerIcon span:last-child {
+  bottom: 0;
+}
+header .container nav .burgerIcon span:last-child.lastRotate {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+@media (max-width: 770px) {
+  header .container nav .burgerIcon {
+    display: block;
+  }
+}
+header .container nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+header .container nav ul li a {
+  text-decoration: none;
+  color: #5d5f79;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+header .container nav ul li a:hover {
+  color: #f15e50;
+}
+@media (max-width: 770px) {
+  header .container nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: -30px;
+    right: -15px;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    padding: 100px 20px 0;
+    display: none;
+  }
+  header .container nav ul.block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.landing {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.landing .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 770px) {
+  .landing .container {
+    grid-template-columns: 1fr;
+  }
+}
+.landing .container .content img {
+  width: 100%;
+}
+.landing .container .content .text {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 770px) {
+  .landing .container .content .text {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+.landing .container .content .text h2 {
+  width: 30%;
+  margin-top: -5px;
+  font-size: 40px;
+  font-weight: 800;
+}
+@media (max-width: 770px) {
+  .landing .container .content .text h2 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.landing .container .content .text .contentText {
+  width: 58%;
+}
+@media (max-width: 770px) {
+  .landing .container .content .text .contentText {
+    width: 100%;
+  }
+}
+.landing .container .content .text .contentText p {
+  line-height: 1.6;
+  color: #5d5f79;
+  text-align: start;
+}
+.landing .container .content .text .contentText .button button {
+  margin-top: 20px;
+  border: none;
+  padding: 12px 25px;
+  color: #fffdfa;
+  background-color: #f15e50;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.landing .container .content .text .contentText .button button:hover {
+  background-color: #00001a;
+}
+@media (max-width: 770px) {
+  .landing .container .content .text .contentText .button {
+    text-align: end;
+  }
+}
+
+.landing .container .boxes {
+  background-color: #00001a;
+  padding: 20px;
+}
+.landing .container .boxes h2 {
+  color: #e9ab53;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.landing .container .boxes .box {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.landing .container .boxes .box:not(:last-child) {
+  border-bottom: 1px solid #5d5f79;
+  margin-bottom: 15px;
+}
+.landing .container .boxes .box h3 {
+  color: #fffdfa;
+  margin-bottom: 15px;
+}
+.landing .container .boxes .box p {
+  color: #5d5f79;
+  line-height: 1.6;
+}
+
+.gaming {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.gaming .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+.gaming .container .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.gaming .container .box img {
+  height: 160px;
+}
+.gaming .container .box .text span {
+  display: block;
+  color: #c5c6ce;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.gaming .container .box .text h3 {
+  color: #00001a;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.gaming .container .box .text h3:hover {
+  color: #f15e50;
+}
+.gaming .container .box .text p {
+  color: #5d5f79;
+  line-height: 1.6;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #00001a;
+  color: white;
+}
+footer .attribution {
+  text-align: center;
+}
+footer .attribution a,
+footer .attribution span {
+  color: #3e52a3;
+  text-decoration: none;
+}
+@media (max-width: 770px) {
+  footer .attribution {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

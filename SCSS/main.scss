@@ -13,7 +13,7 @@ body {
     z-index: 99;
     display: none;
 
-    &.block {
+    &.d-block {
       display: block;
     }
   }
@@ -112,7 +112,7 @@ header {
           padding: 100px 20px 0;
           display: none;
 
-          &.block {
+          &.d-flex {
             display: flex;
           }
         }

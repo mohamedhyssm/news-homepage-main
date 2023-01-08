@@ -54,7 +54,7 @@ body .overlay {
   z-index: 99;
   display: none;
 }
-body .overlay.block {
+body .overlay.d-block {
   display: block;
 }
 
@@ -149,7 +149,7 @@ header .container nav ul li a:hover {
     padding: 100px 20px 0;
     display: none;
   }
-  header .container nav ul.block {
+  header .container nav ul.d-flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

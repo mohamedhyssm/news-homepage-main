@@ -4,23 +4,20 @@ let burgerIcon = document.getElementById("burgerIcon") as HTMLDivElement,
   ulNavBar = document.getElementById("navBar") as HTMLElement,
   ulNavBarChilderen: Element[] = Array.from(ulNavBar.children);
 
-if (document.body.clientWidth <= 770) {
-  ulNavBar.setAttribute("style", `height:${document.body.clientHeight}px;`);
-  overlayDiv.setAttribute("style", `height:${document.body.clientHeight}px;`)
+  if (window.innerWidth <= 770) {
+    ulNavBar.setAttribute("style", `height:${document.body.clientHeight}px;`);
+    overlayDiv.setAttribute("style", `height:${document.body.clientHeight}px;`);
   ulNavBarChilderen.forEach( (li) => {
-    (li as HTMLLIElement).onclick = function () {
-      openAndCloseNavBar()
-    }
+    (li as HTMLLIElement).onclick = openAndCloseNavBar;
   })
 }
 
 window.onresize = function () {
-  if (document.body.clientWidth <= 770) {
+  if (window.innerWidth <= 770) {
     ulNavBar.setAttribute("style", `height:${document.body.clientHeight}px;`);
+    overlayDiv.setAttribute("style", `height:${document.body.clientHeight}px;`);
     ulNavBarChilderen.forEach( (li) => {
-      (li as HTMLLIElement).onclick = function () {
-        openAndCloseNavBar()
-      }
+      (li as HTMLLIElement).onclick = openAndCloseNavBar;
     })
   } else {
     ulNavBar.setAttribute("style", `height:auto;`);
@@ -39,6 +36,6 @@ function openAndCloseNavBar() {
   burgerIconSpans[1].classList.toggle("noOpacity");
   burgerIconSpans[0].classList.toggle("FirstRotate");
   burgerIconSpans[2].classList.toggle("lastRotate");
-  overlayDiv.classList.toggle("block");
-  ulNavBar.classList.toggle("block");
+  overlayDiv.classList.toggle("d-block");
+  ulNavBar.classList.toggle("d-flex");
 }

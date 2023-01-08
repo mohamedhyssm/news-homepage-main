@@ -8,7 +8,7 @@ let burgerIcon = document.getElementById("burgerIcon") as HTMLDivElement,
     ulNavBar.setAttribute("style", `height:${document.body.clientHeight}px;`);
     overlayDiv.setAttribute("style", `height:${document.body.clientHeight}px;`);
   ulNavBarChilderen.forEach( (li) => {
-    (li as HTMLLIElement).onclick = openAndCloseNavBar;
+    (li as HTMLLIElement).onclick = openAndCloseNavbar;
   })
 }
 
@@ -17,7 +17,7 @@ window.onresize = function () {
     ulNavBar.setAttribute("style", `height:${document.body.clientHeight}px;`);
     overlayDiv.setAttribute("style", `height:${document.body.clientHeight}px;`);
     ulNavBarChilderen.forEach( (li) => {
-      (li as HTMLLIElement).onclick = openAndCloseNavBar;
+      (li as HTMLLIElement).onclick = openAndCloseNavbar;
     })
   } else {
     ulNavBar.setAttribute("style", `height:auto;`);
@@ -27,9 +27,9 @@ window.onresize = function () {
   }
 }
 
-burgerIcon.onclick = openAndCloseNavBar;
+burgerIcon.onclick = openAndCloseNavbar;
 
-function openAndCloseNavBar() {
+function openAndCloseNavbar() {
   burgerIconSpans.forEach(span => {
     span.classList.toggle("go-center")
   });

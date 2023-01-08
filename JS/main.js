@@ -4,7 +4,7 @@ if (window.innerWidth <= 770) {
     ulNavBar.setAttribute("style", `height:${document.body.clientHeight}px;`);
     overlayDiv.setAttribute("style", `height:${document.body.clientHeight}px;`);
     ulNavBarChilderen.forEach((li) => {
-        li.onclick = openAndCloseNavBar;
+        li.onclick = openAndCloseNavbar;
     });
 }
 window.onresize = function () {
@@ -12,7 +12,7 @@ window.onresize = function () {
         ulNavBar.setAttribute("style", `height:${document.body.clientHeight}px;`);
         overlayDiv.setAttribute("style", `height:${document.body.clientHeight}px;`);
         ulNavBarChilderen.forEach((li) => {
-            li.onclick = openAndCloseNavBar;
+            li.onclick = openAndCloseNavbar;
         });
     }
     else {
@@ -22,8 +22,8 @@ window.onresize = function () {
         });
     }
 };
-burgerIcon.onclick = openAndCloseNavBar;
-function openAndCloseNavBar() {
+burgerIcon.onclick = openAndCloseNavbar;
+function openAndCloseNavbar() {
     burgerIconSpans.forEach(span => {
         span.classList.toggle("go-center");
     });
